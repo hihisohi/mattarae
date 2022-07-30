@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.Dosis {
+  font-family: 'Dosis', sans-serif;
+}
+
+.FredokaOne {
+  font-family: 'Fredoka One', cursive;
+}
+
+.Baloo2 {
+  font-family: 'Baloo 2', cursive;
+}
+
+.Comfortaa {
+  font-family: 'Comfortaa', cursive;
+}
+
+.BalsamiqSans {
+  font-family: 'Balsamiq Sans', cursive;
+}
+
+.emoji {
+  font-family: serif !important;
+  font-weight: normal !important;
+  display: inline-block;
+}
+
+@font-face {
+  font-family: 'GangwonEduPowerExtraBoldA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.Pretendard {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
