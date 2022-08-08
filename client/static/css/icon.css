@@ -1,0 +1,58 @@
+.icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
+
+.icon-fork {
+  background-image: url('../img/icon/icon_fork.png');
+}
+
+.on .icon-fork {
+  background-image: url('../img/icon/icon_fork_on.png');
+}
+
+.icon-forked {
+  background-image: url('../img/icon/icon_forked.png');
+}
+
+.icon-map {
+  background-image: url('../img/icon/icon_map.png');
+}
+
+.icon-thread {
+  background-image: url('../img/icon/icon_thread.png');
+}
+
+.icon-share {
+  background-image: url('../img/icon/icon_share.png');
+}
+
+.icon-ellipses {
+  background-image: url('../img/icon/icon_ellipses.png');
+}
+
+.icon-list {
+  background-image: url('../img/icon/icon_list.png');
+}
+
+.on .icon-list {
+  background-image: url('../img/icon/icon_list_on.png');
+}
+
+.icon-grid {
+  background-image: url('../img/icon/icon_grid.png');
+}
+
+.on .icon-grid {
+  background-image: url('../img/icon/icon_grid_on.png');
+}
+
+.icon-add {
+  background-image: url('../img/icon/icon_add1.png');
+}
+
+.icon-edit {
+  background-image: url('../img/icon/icon_edit.png');
+}
