@@ -1,0 +1,23 @@
+{
+  "places" : [
+    {
+      "id": "pl_0",
+      "name": "온혜화",
+      "address": "서울 종로구 대학로12길 80 1층",
+      "memo": "연뮤덕들 사이에서 온혜화의 스콘을 모르면 간첩인 선풍적인 인기를 자랑하는 스콘 전문점. 사진은 크리스마스 한정 판매하신 패키지로, 시즌스콘인 트리베리스콘은 제발 온고잉 해주셨으면 좋겠을 정도",
+      "thumbUrl": "/static/img/place_img01.jfif",
+      "authorId": "user_01",
+      "relatedTaraeId": "tr_0"
+    },
+    {
+      "id": "pl_1",
+      "name": "브알라 Cafe 대학로",
+      "address": "서울 종로구 대학로12길 21 예스24 스테이지 1층",
+      "memo": "가장 신선한 아이스크림을 만나보세요. 영하196도의 액화질소를 이용해 신선한 원유와 재료로 아이스크림을 즉석에서 만들어 제공합니다.",
+      "thumbUrl": "/static/img/place_img02.jfif",
+      "authorId": "user_01",
+      "relatedTaraeId": "tr_0"
+    }
+
+  ]
+}

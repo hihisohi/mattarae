@@ -7,25 +7,34 @@ export default class extends AbstractView {
   }
 
   async getHtml() {
-    return `
-    <div class="feed-wrap">
 
-    <div class="feed-switch-btns tab-btns">
-      <button type="button" class="feed-btn tab-btn follower on" href="#"><span>팔로우 TR</span></button>
-      <button type="button" class="feed-btn tab-btn recommend" href="#"><span>인기 TR</span></button>
-    </div>
-  
-    <div class="feed-switch-contents tab-cnts">
-      <div class="tarae-feed folloer-feed tab-cnt">
-        <h2>NEW 팔로우 TR</h2>
+    const dataTarae = await fetch("/static/data/taraes.json").then(res => res.json());
+    const dataUser = await fetch("/static/data/users.json").then(res => res.json());  // 실제 DB사용 시 taraeDB, placesDB와 UserDB join되어있음
+
+    // 팔로우TR 탭 컨텐츠 - followTaraeBox 내가 팔로우한 사람들의 Tarae를 최근 순으로 보여주기
+    // 인기TR 탭 컨텐츠 - mostForkedTaraeBox 탭 내용의 경우 최근 3일 동안 등록된 TR 중 포크된 수가 가장 많은 수 대로 30개 보여주기
+
+    let followTaraeBox = ``;
+    let mostForkedTaraeBox = ``;
+
+    dataTarae.taraes.forEach(tarae => {
+
+      const user = dataUser.users.find(user => user.id === tarae.authorId);
+
+      let tags = ``;
+      tarae.tag.forEach(tag => {
+        tags += `<span>${tag}</span>`;
+      });
+
+      followTaraeBox += `
         <article class="tarae-box">
           <div class="tr-info">
             <div class="user-nick">
               <a href="">
-                <div class="nick-thumb"><img src="./static/img/tr_nick_thumb.PNG" alt=""></div>
+                <div class="nick-thumb" style="background-image: url(${user.imageSrc})"></div>
                 <div class="nick-name">
-                  <p>연극과 뮤지컬을 즐기는</p>
-                  <span>덕덕뮤덕</span>
+                  <p>${user.introduction}</p>
+                  <span>${user.nickName}</span>
                 </div>
               </a>
             </div>
@@ -38,44 +47,49 @@ export default class extends AbstractView {
             </div>
           </div>
           <div class="tr-content">
-            <a href="/taraes/1" data-link>
-              <h3>연뮤덕을 위한 맛집타래</h3>
-              <p>연극뮤지컬닥구들을 위해 공연장 근방 맛집들을 모아둡니다. 계속 추가될 예정 ^0^</p>
-              <div class="tr-thumb"><img src="./static/img/tr_thumb_01.jpg" alt=""></div>
+            <a href="/taraes/${tarae.id}" data-link>
+              <h3>${tarae.title}</h3>
+              <p>${tarae.description}</p>
+              <div class="tr-thumb"><img src="${tarae.thumbUrl}" alt=""></div>
             </a>
           </div>
           <div class="tr-foot-info">
             <div class="tags">
-              <span>연뮤덕</span>
-              <span>공연장근처맛집</span>
-              <span>샤롯데시어터</span>
-              <span>예술의전당</span>
-              <span>대학로</span>
-              <span>혜화</span>
-              <span>압구정</span>
+              ${tags}
             </div>
             <div class="tr-additional-info">
               <p><span class="icon icon-thread"></span>29</p>
               <p><span class="icon icon-forked"></span>106</p>
             </div>
             <div class="utils">
-              <div class="created-date">3시간 전</div>
+              <div class="created-date">${tarae.date}</div>
               <div class="share-btns">
                 <button type="button"><span class="icon icon-fork on"></span></button>
-                <!-- <button type="button"><span class="icon-share"></span></button> -->
               </div>
             </div>
           </div>
         </article>
+      `
+    });
+
+
+    return `
+    <div class="feed-wrap">
+
+    <div class="feed-switch-btns tab-btns">
+      <button type="button" class="feed-btn tab-btn follower active" href="#"><span>팔로우 TR</span></button>
+      <button type="button" class="feed-btn tab-btn recommend" href="#"><span>인기 TR</span></button>
+    </div>
+  
+    <div class="feed-switch-contents tab-cnts">
+      <div class="tarae-feed folloer-feed tab-cnt">
+        <h2>NEW 팔로우 TR</h2>
+        ${followTaraeBox}
       </div>
   
       <div class="tarae-feed recommend-feed tab-cnt">
         <h2>NEW 추천 TR</h2>
-        <article class="tarae-box">
-          <div class="tr-info">
-            <h3>연뮤덕을 위한 맛집타래</h3>
-          </div>
-        </article>
+        ${mostForkedTaraeBox}
       </div>
     </div>
   

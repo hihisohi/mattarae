@@ -1,0 +1,41 @@
+{
+  "taraes" : [
+    {
+      "id": "tr_0",
+      "title": "연뮤덕을 위한 맛집타래",
+      "description": "연극뮤지컬닥구들을 위해 공연장 근방 맛집들을 모아둡니다. 계속 추가될 예정 ^0^",
+      "thumbUrl": "/static/img/tr_thumb_01.jpg",
+      "tag": ["연뮤덕", "공연장근처맛집", "샤롯데시어터", "예술의전당", "대학로", "혜화", "압구정"],       
+      "date": "3시간 전",
+      "forked": "106",
+      "authorId": "user_01",
+      "NumberOfPlaces": "29",
+      "places": []
+
+    }, 
+    {
+      "id": "tr_1",
+      "title": "압구정 점심 리스트",
+      "description": "압구정 회사원들을 위한 점심 추천메뉴입니다. (매장/배달/포장)",
+      "thumbUrl": "/static/img/tr_thumb_02.jpg",
+      "tag": ["압구정", "점심맛집", "압구정점심맛집", "가로수길", "점심메뉴추천", "가로수길맛집"],       
+      "date": "2022-08-10",
+      "forked": "65",
+      "authorId": "user_02",
+      "NumberOfPlaces": "31",
+      "places": []
+    }, 
+    {
+      "id": "tr_2",
+      "title": "빵순이의 빵지순례길",
+      "description": "전국 빵투어 현황 공유합니다. 계속 추가 예정!",
+      "thumbUrl": "/static/img/tr_thumb_03.jpg",
+      "tag": ["전국빵투어", "베이커리", "디저트", "빵순이모여라", "카페", "빵맛집", "전국빵집"],       
+      "date": "2022-07-30",
+      "forked": "247",
+      "authorId": "user_03",
+      "NumberOfPlaces": "50",
+      "places": []
+    }
+  ]
+}

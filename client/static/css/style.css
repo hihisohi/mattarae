@@ -210,6 +210,13 @@ body {
 }
 
 
+.tab-cnt {
+  display: none;
+}
+
+
+
+
 /* ========================================================================== */
 /* Header */
 #header {
@@ -273,16 +280,40 @@ body {
   background: #fff;
   border-top: 1px solid #e4f3ef;
   width: 100vw;
-  height: 80px;
+  height: 70px;
   display: flex;
   justify-content: center;
   z-index: 100;
 }
 
 #gnb a {
-  display: block;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   width: 20%;
+  max-width: 70px;
+  margin: 0 15px;
+  background: no-repeat 50% 20%/ 3rem;
   text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6cb6a2;
+}
+
+#gnb a:nth-child(1) {
+  background-image: url('../img/gnb_feed.png');
+}
+
+#gnb a:nth-child(2) {
+  background-image: url('../img/gnb_tarae.png');
+}
+
+#gnb a:nth-child(3) {
+  background-image: url('../img/gnb_map.png');
+}
+
+#gnb a:nth-child(4) {
+  background-image: url('../img/gnb_mypage.png');
 }
 
 
@@ -298,21 +329,12 @@ body {
 /* Main Page */
 
 .feed-switch-btns {
-  position: relative;
   display: flex;
 }
 
-.feed-switch-btns:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50%;
-  height: 3px;
-  background: #00AF80;
-}
 
 .feed-btn {
+  position: relative;
   width: 50%;
   font-weight: 600;
   padding: 20px 40px;
@@ -320,11 +342,21 @@ body {
   text-align: center;
 }
 
+.feed-btn.active:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #00AF80;
+}
+
 .feed-btn span {
   color: #cdcdcd;
 }
 
-.feed-btn.on span {
+.feed-btn.active span {
   color: #333;
   background: linear-gradient(to top, rgba(151, 221, 202, .6) 0%, rgba(151, 221, 202, .6) .8rem, transparent .8rem, transparent 100%);
 }
@@ -361,6 +393,7 @@ body {
 .user-nick a {
   display: flex;
   align-items: center;
+  width: fit-content;
 }
 
 .user-nick .nick-thumb {
@@ -368,6 +401,9 @@ body {
   height: 5rem;
   border-radius: 50%;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
 }
 
 .user-nick .nick-name {
@@ -648,9 +684,19 @@ body {
   margin-bottom: 0;
 }
 
+.tarae-detail-container .add-btn-sect {
+  padding: 20px 0;
+  border-top: 10px solid #e4f3ef;
+  border-bottom: 10px solid #e4f3ef;
+}
+
+.tarae-detail-container .add-btn-sect a {
+  width: 94%;
+  margin: 0 auto;
+}
+
 .tarae-places {
   padding: 16px;
-  border-top: 10px solid #e4f3ef;
 }
 
 .place-box {
@@ -700,10 +746,19 @@ body {
 }
 
 .place-box .place-info .pl-img {
+  position: relative;
   max-width: 400px;
+  height: 260px;
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 10px;
+}
+
+.place-box .place-info .pl-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .place-box .place-btns {

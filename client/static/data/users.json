@@ -1,0 +1,30 @@
+{
+  "users" : [
+    {
+      "id": "user_01",
+      "email": "user01@naver.com",
+      "name": "정뮤덕",
+      "password": "1234",
+      "nickName": "덕덕뮤덕",
+      "introduction": "연극과 뮤지컬을 즐기는",
+      "imageSrc": "/static/img/tr_nick_thumb01.PNG"
+    }, {
+      "id": "user_02",
+      "email": "user02@naver.com",
+      "name": "김도비",
+      "password": "1234",
+      "nickName": "압구정도비",
+      "introduction": "점심시간을 위해 사는",
+      "imageSrc": "/static/img/tr_nick_thumb02.jpg"
+    }, {
+      "id": "user_03",
+      "email": "user03@naver.com",
+      "name": "이빵순",
+      "password": "1234",
+      "nickName": "빵순빵떡",
+      "introduction": "온 세상 빵을 접수한",
+      "imageSrc": "/static/img/tr_nick_thumb03.jpg"
+    }
+
+  ]
+}

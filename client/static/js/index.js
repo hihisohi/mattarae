@@ -1,9 +1,17 @@
+// views
 import Main from "./views/Main.js";
 import MyTaraes from "./views/taraes/MyTaraes.js";
 import Tarae from "./views/taraes/Tarae.js";
 import AddTarae from "./views/taraes/Add.js";
+import AddPlace from "./views/taraes/AddPlace.js";
+import TaraeMap from "./views/taraes/Map.js";
+import MyPage from "./views/user/Mypage.js";
 
+
+// feature
 import ViewKakaoMap from "./viewMap.js";
+import tabContent from "./tabContent.js";
+
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
@@ -29,6 +37,9 @@ const router = async () => {
     { path: "/taraes", view: MyTaraes },
     { path: "/taraes/:id", view: Tarae },
     { path: "/add", view: AddTarae },
+    { path: "/addPlace", view: AddPlace },
+    { path: "/map", view: TaraeMap },
+    { path: "/mypage", view: MyPage },
     // { path: "/map", view: () => console.log("타래맵") },
     // { path: "/mypage", view: () => console.log("마이페이지") },
 
@@ -54,12 +65,19 @@ const router = async () => {
 
   document.querySelector("#app").innerHTML = await view.getHtml();
 
+  // 페이지 이동 시 스크롤 초기화
   window.scrollTo(0, 0);
 
-  if(match.result == "/add") {
+  // 플레이스 등록 페이지에서만 ViewKakaoMap() 실행
+  if(match.result == "/addPlace") {
     ViewKakaoMap();
   }
 
+  // tab content가 있는 페이지에서만 tabContent() 실행
+  if(document.querySelector('.tab-cnts')) {
+    tabContent();
+  }
+  
 }
 
 window.addEventListener("popstate", router);
